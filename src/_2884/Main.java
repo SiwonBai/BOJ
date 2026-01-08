@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // 45분 일찍 알람 설정하기
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -28,14 +28,14 @@ public class Main {
 
         if (H == 0 && M >= 45) {
             newH = 0;
-            newM = M - 60;
+            newM = M - 45;
         }
 
         if (H == 0 && M < 45) {
             newH = 23;
             newM = (M + 60) - 45;
         }
-
+        // (BufferedWriter) 숫자는 문자형으로 변환하여 저장한다
         bw.write(String.valueOf(newH) + " " + String.valueOf(newM));
         bw.flush();
 
